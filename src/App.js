@@ -1,12 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class App extends Component {
-  render() {
-    return (
-      <div>pd
-      </div>
-    );
+  render () {
+    return <div>pd</div>
   }
 }
 
-export default App;
+export default App
