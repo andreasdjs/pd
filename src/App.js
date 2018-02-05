@@ -9,17 +9,12 @@ injectGlobal`
   ${styledGlobal}
 `
 
-const AppWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-`
-
 class App extends Component {
   render () {
     return (
-      <AppWrapper>
+      <div>
         <HomeContainer />
-      </AppWrapper>
+      </div>
     )
   }
 }
