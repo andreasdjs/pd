@@ -5,15 +5,17 @@ const Section = styled.section`
   padding: 4em;
   width: 100%;
   height: 100vh;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: ${props => props.bgcolor && props.bgcolor};
 `
 
-const Home = ({ message }) => (
+const Home = ({ message, value }) => (
   <div>
-    <Section bgcolor="#f0f0f0"><h1>{message} 1</h1></Section>
-    <Section bgcolor="#e0e0e0"><h1>{message} 2</h1></Section>
-    <Section bgcolor="#d0d0d0"><h1>{message} 3</h1></Section>
+    <Section bgcolor="#e0e0e0"><h1>{message} {value}</h1></Section>
+    <Section bgcolor="#d0d0d0"><h1>{message} {value}</h1></Section>
+    <Section bgcolor="#c0c0c0"><h1>{message} {value}</h1></Section>
   </div>
 )
 
