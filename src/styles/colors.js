@@ -3,10 +3,10 @@ const colors = {
   black: '#222',
   white: '#fff',
   green: '#BADA55',
-  primaryColor: '#ff5596',
-  primaryColorLight: '#ff639f',
-  warningColor: 'red',
-  confirmColor: 'green'
+  primary: '#ff5596',
+  primaryHighlight: '#ff639f',
+  danger: '#f22b2b',
+  confirm: '#07b227'
 }
 
 export default colors

@@ -1,6 +1,9 @@
 import React from 'react'
+import Button from 'components/Button'
 import styled from 'styled-components'
-import colors  from '../../../styles/colors'
+import colors from '../../../styles/colors'
+
+const buttonText = 'PUSH'
 
 const StickyHeader = styled.section`
   position: fixed;
@@ -13,30 +16,49 @@ const StickyHeader = styled.section`
   background: ${props => props.bgcolor && props.bgcolor};
 `
 
-const IncreaseButton = styled.button`
-  padding: 1em 2em;
-  border-radius: 50px;
-  color: white;
-  background: ${props => (props.bgcolor && props.bgcolor) || colors.primaryColor };
-  outline: none;
-  border:none;
-  transition: all 200ms ease-in-out;
-  &:hover {
-    cursor: pointer;
-    background: ${props => (props.bgcolor && props.bgcolor) || colors.primaryColorLight };
-    transform: scale(1.075);
-  }
-  &:active {
-    outline: none;
-    border: none;
-    transform: scale(0.95);
-  }
-`
-
 const Home = ({ handleClick }) => (
   <div>
     <StickyHeader>
-      <IncreaseButton onClick={handleClick}>PUSH ME</IncreaseButton>
+      <Button
+        handleClick={handleClick}
+        buttonText={buttonText}
+      />
+      <Button
+        handleClick={handleClick}
+        buttonStyle='blackGhost'
+        buttonText={buttonText}
+        roundCorners='true'
+      />
+      <Button
+        handleClick={handleClick}
+        buttonStyle='whiteGhost'
+        buttonText={buttonText}
+      />
+      <Button
+        handleClick={handleClick}
+        buttonStyle='inverted'
+        buttonText={buttonText}
+      />
+      {/* <Button
+        handleClick={handleClick}
+        buttonStyle='confirm'
+        buttonText={buttonText}
+        roundCorners='true'
+      />
+      <Button
+        handleClick={handleClick}
+        buttonStyle='danger'
+        buttonText={buttonText}
+        roundCorners='true'
+      />
+      <Button
+        handleClick={handleClick}
+        buttonStyle='danger'
+        buttonText={buttonText}
+        bgcolor={colors.green}
+        color='black'
+        borderColor='black'
+      /> */}
     </StickyHeader>
   </div>
 )

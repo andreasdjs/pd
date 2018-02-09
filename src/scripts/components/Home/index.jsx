@@ -13,9 +13,11 @@ const Section = styled.section`
 
 const Home = ({ message, value }) => (
   <div>
-    <Section bgcolor="#e0e0e0"><h1>{message} {value}</h1></Section>
-    <Section bgcolor="#d0d0d0"><h1>{message} {value}</h1></Section>
-    <Section bgcolor="#c0c0c0"><h1>{message} {value}</h1></Section>
+    <Section bgcolor='#eee'><h1>{message} {value}</h1></Section>
+    <Section bgcolor='#ddd'><h1>{message} {value}</h1></Section>
+    <Section bgcolor='#ccc'><h1>{message} {value}</h1></Section>
+    <Section bgcolor='#bbb'><h1>{message} {value}</h1></Section>
+    <Section bgcolor='#aaa'><h1>{message} {value}</h1></Section>
   </div>
 )
 
