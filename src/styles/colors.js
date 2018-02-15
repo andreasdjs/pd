@@ -1,5 +1,5 @@
 const colors = {
-  mainBgColor: '#f0f0f0',
+  mainBgColor: '#eee',
   black: '#222',
   white: '#fff',
   green: '#BADA55',

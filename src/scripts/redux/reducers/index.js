@@ -1,9 +1,9 @@
 import counter from './counter'
-import anotherCounter from './anotherCounter'
+import sound from './sound'
 
 const reducers = {
+  sound,
   counter,
-  anotherCounter
 }
 
 export default reducers

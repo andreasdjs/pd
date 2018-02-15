@@ -67,6 +67,12 @@ const StyledButton = styled.button`
     outline: none;
     transform: scale(0.975);
   }
+  &:disabled, &:disabled+&:hover {
+    background: #CCC;
+    border: 2px solid #CCC;
+    color: #EEE;
+    transform: scale(1);
+  }
 `
 
 const Button = ({
@@ -76,7 +82,8 @@ const Button = ({
   color,
   buttonStyle,
   borderColor,
-  roundCorners
+  roundCorners,
+  disabled
 }) => (
   <div>
     <ThemeProvider
@@ -98,6 +105,7 @@ const Button = ({
       }}
     >
       <StyledButton
+        disabled={disabled}
         onClick={handleClick}
         buttonStyle={buttonStyle}
         roundCorners={roundCorners}
