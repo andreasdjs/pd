@@ -3,15 +3,23 @@ import Controller from 'components/Controller'
 import { connect } from 'react-redux'
 import {
   toggleMuteAction,
-  playSoundAction
+  playSoundAction,
+  triggerFetchAction
 } from 'redux/actions/sound'
 
 const mapDispatchToProps = dispatch => ({
   toggleMuteClick: () => dispatch(toggleMuteAction),
-  playSoundClick: () => dispatch(playSoundAction)
+  playSoundClick: () => dispatch(playSoundAction),
+  triggerFetchData: () => dispatch(triggerFetchAction)
 })
 
 class ControllerContainer extends Component {
+  componentDidMount () {
+    console.log('Did mount, fetching data...')
+    const { triggerFetchData } = this.props
+    triggerFetchData()
+  }
+
   componentWillReceiveProps (nextProps) {
     if (nextProps.sound !== this.props.sound) {
       this.muteSound(nextProps.sound)

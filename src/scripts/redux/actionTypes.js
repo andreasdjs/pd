@@ -1,3 +1,5 @@
 export const INCREASE = 'increase'
 export const TOGGLE_MUTE = 'toggleMute'
 export const PLAY_SOUND = 'play'
+export const TRIGGER_FETCH = 'triggerFetch'
+export const RECEIVED_DATA = 'receivedData'

@@ -24,11 +24,13 @@ const Home = ({ handleClick, handleToggleMuteClick, handlePlaySoundClick, disabl
         handleClick={handlePlaySoundClick}
         buttonText={playText}
         disabled={disabled}
+        roundCorners='true'
       />
       <Button
         handleClick={handleToggleMuteClick}
         buttonText={muteText}
         disabled={disabled}
+        roundCorners='true'
       />
     </StickyHeader>
   </div>

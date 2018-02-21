@@ -21,15 +21,16 @@ const DisplayStatus = styled.div`
   margin-top:50px;
 `
 
-const Home = ({ sound, play }) => (
+const Home = ({ sound, play, data }) => (
   <div>
     <Section bgcolor='#eee'>
       <DisplayStatus>
-        { (sound === 0) && <h5>MUTE</h5> }
-        { ((play === 1 && sound !== 0) && <h5>PLAYING</h5>) }
+        {data && data.map((item, index) => <div key={index}>{item.type}</div>)}
+        {sound === 0 && <h5>MUTE</h5>}
+        {play === 1 && sound !== 0 && <h5>PLAYING</h5>}
       </DisplayStatus>
       <TweakingContainer />
-      <SvgImage id="svg" />
+      <SvgImage id='svg' />
     </Section>
   </div>
 )

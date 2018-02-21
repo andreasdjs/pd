@@ -50,6 +50,7 @@ const danger = {
 }
 
 const StyledButton = styled.button`
+  letter-spacing: 2px;
   margin: 0 0.4em 0 0.4em;
   padding: 0.8em 1.6em;
   outline: none;

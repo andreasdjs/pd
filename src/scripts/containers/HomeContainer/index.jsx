@@ -26,12 +26,12 @@ class HomeContainer extends Component {
   }
 
   render () {
-    const { sound, play } = this.props
+    const { sound, play, data } = this.props
 
     return (
       <div>
         <ControllerContainer sound={sound} play={play} />
-        <Home sound={sound} play={play} />
+        <Home data={data} sound={sound} play={play} />
       </div>
     )
   }
@@ -39,7 +39,8 @@ class HomeContainer extends Component {
 
 const mapStateToProps = state => ({
   sound: state.sound.sound,
-  play: state.sound.play
+  play: state.sound.play,
+  data: state.data.data
 })
 
 HomeContainer = connect(mapStateToProps)(HomeContainer)
