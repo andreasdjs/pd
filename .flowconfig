@@ -1,0 +1,16 @@
+[ignore]
+.*/node_modules/protobufjs/.*
+
+[include]
+
+[libs]
+
+[lints]
+
+[options]
+module.name_mapper='^config/\(.*\)$' -> '<PROJECT_ROOT>/src/scripts/config/\1'
+module.name_mapper='^components/\(.*\)$' -> '<PROJECT_ROOT>/src/scripts/components/\1'
+module.name_mapper='^containers/\(.*\)$' -> '<PROJECT_ROOT>/src/scripts/containers/\1'
+module.name_mapper='^redux/\(.*\)$' -> '<PROJECT_ROOT>/src/scripts/redux/\1'
+
+[strict]

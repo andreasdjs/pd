@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
@@ -39,7 +41,7 @@ const Slider = styled.input`
   }
 `
 
-class TweakingContainer extends Component {
+class TweakingContainer extends Component<{}> {
   // tick() {
   //   let randomFreq = Math.floor((Math.random() * 4000) + 1)
   //   window.Pd.send('freq', [randomFreq])
@@ -49,7 +51,7 @@ class TweakingContainer extends Component {
   //   this.timer = setInterval(() => this.tick(), 800)
   // }
 
-  handleSliderChange (e) {
+  handleSliderChange (e: SyntheticInputEvent<HTMLInputElement>) {
     window.Pd.send('freq', [parseInt(e.target.value, 10)])
   }
 

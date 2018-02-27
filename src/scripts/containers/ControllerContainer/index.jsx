@@ -1,3 +1,5 @@
+// @flow
+
 import React, { Component } from 'react'
 import Controller from 'components/Controller'
 import { connect } from 'react-redux'
@@ -13,7 +15,15 @@ const mapDispatchToProps = dispatch => ({
   triggerFetchData: () => dispatch(triggerFetchAction)
 })
 
-class ControllerContainer extends Component {
+type Props = {
+  triggerFetchData: any,
+  toggleMuteClick: any,
+  playSoundClick: any,
+  play: number,
+  sound: number,
+}
+
+class ControllerContainer extends Component<Props> {
   componentDidMount () {
     console.log('Did mount, fetching data...')
     const { triggerFetchData } = this.props

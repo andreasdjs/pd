@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react'
 import styled from 'styled-components'
 import { ThemeProvider } from 'styled-components'
@@ -76,6 +78,17 @@ const StyledButton = styled.button`
   }
 `
 
+type Props = {
+  handleClick: any,
+  buttonText: string,
+  bgcolor?: string,
+  color?: string,
+  buttonStyle?: string,
+  borderColor?: string,
+  roundCorners?: string,
+  disabled?: string
+}
+
 const Button = ({
   handleClick,
   buttonText,
@@ -85,7 +98,7 @@ const Button = ({
   borderColor,
   roundCorners,
   disabled
-}) => (
+}: Props) => (
   <div>
     <ThemeProvider
       theme={() => {
