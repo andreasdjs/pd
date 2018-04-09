@@ -3,6 +3,15 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 
+import colors from '../../../styles/colors'
+
+const SliderLabel = styled.div`
+  margin-bottom:20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const SliderContainer = styled.div`
   margin-bottom:60px;
   display: flex;
@@ -15,9 +24,9 @@ const Slider = styled.input`
   max-width: 500px;
   height: 15px;
   border-radius: 5px;
-  background: #bbb;
+  background: ${colors.primary};
   outline: none;
-  opacity: 0.6;
+  opacity: 0.8;
   -webkit-transition: .2s;
   transition: opacity .2s;
   &:hover {
@@ -40,8 +49,12 @@ const Slider = styled.input`
     cursor: pointer;
   }
 `
+type Props = {
+  loaded: number,
+}
 
-class TweakingContainer extends Component<{}> {
+class TweakingContainer extends Component<Props> {
+  // class TweakingContainer extends Component<{}> {
   // tick() {
   //   let randomFreq = Math.floor((Math.random() * 4000) + 1)
   //   window.Pd.send('freq', [randomFreq])
@@ -51,22 +64,33 @@ class TweakingContainer extends Component<{}> {
   //   this.timer = setInterval(() => this.tick(), 800)
   // }
 
+  // change = (e: SyntheticInputEvent<HTMLInputElement>) => {
+  //   console.log('selct target value: ', e.target.value)
+  // }
+
   handleSliderChange (e: SyntheticInputEvent<HTMLInputElement>) {
     window.Pd.send('freq', [parseInt(e.target.value, 10)])
   }
 
   render () {
+    const { loaded } = this.props
     return (
-      <SliderContainer>
-        <Slider
-          type='range'
-          min='20'
-          step='20'
-          max='8000'
-          id='frequency'
-          onChange={this.handleSliderChange}
-        />
-      </SliderContainer>
+      <div>
+        {loaded === 1 &&
+          <div>
+            <SliderLabel>Tweak squeaker frequency</SliderLabel>
+            <SliderContainer>
+              <Slider
+                type='range'
+                min='20'
+                step='20'
+                max='8000'
+                id='frequency'
+                onChange={this.handleSliderChange}
+              />
+            </SliderContainer>
+          </div>}
+      </div>
     )
   }
 }

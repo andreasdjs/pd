@@ -1,5 +1,5 @@
 import { css } from 'styled-components'
-import colors  from './colors'
+import colors from './colors'
 
 export const styledGlobal = css`
   body {
@@ -11,9 +11,19 @@ export const styledGlobal = css`
   }
   * {
     box-sizing: border-box;
+  }
+  h1, h2, h3, h4 {
     margin: 0;
     padding: 0;
   }
+  p {
+  	margin: 0;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
 `
 
 export default styledGlobal

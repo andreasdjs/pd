@@ -4,42 +4,33 @@ import ControllerContainer from 'containers/ControllerContainer'
 import { connect } from 'react-redux'
 
 class HomeContainer extends Component {
-  componentDidMount () {
-    let patchName = 'seq_phase08.pd'
-    let path = '/assets/patches/'
-
-    window.$(document).ready(() => {
-      window.$.get(path + patchName, mainStr => {
-        window.Pd.loadPatch(mainStr)
-        this.drawPatchSVG(mainStr)
-      })
-    })
-  }
-
-  drawPatchSVG (mainStr) {
-    window.$('#svg').html(
-      window.pdfu.renderSvg(window.pdfu.parse(mainStr), {
-        svgFile: false,
-        ratio: 1.5
-      })
-    )
-  }
-
   render () {
-    const { sound, play, data } = this.props
+    const { soundData, load, sound, play, stop, data, patch, full } = this.props
 
     return (
       <div>
-        <ControllerContainer sound={sound} play={play} />
-        <Home data={data} sound={sound} play={play} />
+        <ControllerContainer
+          full={full}
+          load={load}
+          sound={sound}
+          play={play}
+          stop={stop}
+          patch={patch}
+          soundData={soundData}
+        />
+        <Home full={full} load={load} data={data} sound={sound} play={play} />
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
+  full: state.sound,
+  patch: state.sound.patch,
+  load: state.sound.load,
   sound: state.sound.sound,
   play: state.sound.play,
+  stop: state.sound.stop,
   data: state.data.data
 })
 

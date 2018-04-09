@@ -52,6 +52,7 @@ const danger = {
 }
 
 const StyledButton = styled.button`
+  min-width: 150px;
   letter-spacing: 2px;
   margin: 0 0.4em 0 0.4em;
   padding: 0.8em 1.6em;
@@ -86,7 +87,7 @@ type Props = {
   buttonStyle?: string,
   borderColor?: string,
   roundCorners?: string,
-  disabled?: string
+  disabled?: string,
 }
 
 const Button = ({

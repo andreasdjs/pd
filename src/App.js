@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import HomeContainer from 'containers/HomeContainer'
+import { BrowserRouter as Router } from 'react-router-dom'
+import AppContainer from 'containers/AppContainer'
+
+import { Provider } from 'react-redux'
+import store from 'redux/store'
 
 import { injectGlobal } from 'styled-components'
 import styledNormalize from 'styled-normalize'
 import styledGlobal from './styles/styledGlobal'
-
-import { Provider } from 'react-redux'
-import store from 'redux/store'
 
 injectGlobal`
   ${styledNormalize}
@@ -18,7 +19,9 @@ class App extends Component {
     return (
       <div>
         <Provider store={store}>
-          <HomeContainer />
+          <Router>
+            <AppContainer />
+          </Router>
         </Provider>
       </div>
     )
